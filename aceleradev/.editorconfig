@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0652: A comparação com constante integral é inútil. A constante está fora do intervalo do tipo
+dotnet_diagnostic.CS0652.severity = none
