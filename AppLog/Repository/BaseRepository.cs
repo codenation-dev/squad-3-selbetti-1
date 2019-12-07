@@ -13,7 +13,6 @@ namespace AppLog.Repository
         public BaseRepository(LogContext context)
         {
             _context = context;
-        }
-
+        }   
     }
 }
