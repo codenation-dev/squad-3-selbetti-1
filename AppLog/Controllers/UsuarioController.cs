@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AppLog.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,12 +11,20 @@ namespace AppLog.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class UsuarioController : ControllerBase
     {
+        private IUserService _userService;
+
+        public UsuarioController(IUserService userService)
+        {
+            _userService = userService;
+        }
         // GET api/values
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult<IEnumerable<string>> Get()
         {
+            _userService.GetAll();
             return new string[] { "value1", "value2" };
         }
 
