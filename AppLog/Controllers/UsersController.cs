@@ -9,6 +9,7 @@ using AppLog.Domain.Models;
 using AppLog.Dto;
 using AppLog.Helpers;
 using AppLog.Services;
+using AppLog.Services.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -106,15 +107,19 @@ namespace AppLog.Controllers
             var user = _userService.GetById(id);
             var userDto = _mapper.Map<UserDto>(user);
             return Ok(userDto);
-            return null;
         }
 
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody]UserDto userDto)
         {
-            return null;
+            
             // map dto to entity and set id
             var user = _mapper.Map<User>(userDto);
+            var listOfValidation = user.ValidateObj();
+            if (listOfValidation.Count != 0)
+            {
+                return BadRequest(listOfValidation);
+            }
             user.Id = id;
 
             try
