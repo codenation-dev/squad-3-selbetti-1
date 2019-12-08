@@ -84,7 +84,7 @@ namespace AppLog.Controllers
             try
             {                
                 _userService.Create(user, userDto.Password);
-                return Ok();
+                return Created("", "Usuário Criado com Sucesso!");
             }
             catch (AppException ex)
             {
