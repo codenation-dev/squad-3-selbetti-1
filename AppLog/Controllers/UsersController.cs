@@ -75,6 +75,11 @@ namespace AppLog.Controllers
         public IActionResult Register([FromBody] UserDto userDto)
         {
             var user = _mapper.Map<User>(userDto);
+            var listOfValidation = user.ValidateObj();
+            if(listOfValidation.Count != 0)
+            {
+                return BadRequest(listOfValidation);
+            }
 
             try
             {                
