@@ -23,14 +23,31 @@ namespace AppLog.Repository
             await _context.Applications.AddAsync(application);
         }
 
+        public Application Create(Application app)
+        {
+            this._context.Applications.Add(app);
+            this._context.SaveChanges();
+            return app;
+        }
+
         public async Task<Application> FindByIdAsync(int id)
         {
             return await _context.Applications.FindAsync(id);
         }
 
-        public void Update(Application application)
+        public Application FindById(int id)
         {
+            return this._context.Applications.Where(x => x.Id == id).FirstOrDefault();
+        }
+
+        public void Update(Application app)
+        {
+
+            var application = FindById(app.Id);
+            application.Name = app.Name;
+            application.Description = app.Description;
             _context.Applications.Update(application);
+            _context.SaveChanges();
         }
 
         public void Remove(Application application)
