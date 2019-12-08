@@ -74,14 +74,7 @@ namespace AppLog.Controllers
         [AllowAnonymous]
         public IActionResult Register([FromBody] UserDto userDto)
         {
-            var validations = userDto.ValidateObj();
-            if (validations.Count != 0)
-            {
-                return UnprocessableEntity(validations);
-            }
-
             var user = _mapper.Map<User>(userDto);
-
 
             try
             {                
