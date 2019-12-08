@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AppLog",
+    "\\AppLog\\Migrations"
   ],
+  "SelectedNode": "\\AppLog\\Migrations\\LogContextModelSnapshot.cs",
   "PreviewInSolutionExplorer": false
 }
