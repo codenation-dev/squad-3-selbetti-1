@@ -10,7 +10,7 @@ namespace AppLog.Services.Interfaces
     {
         IEnumerable<Application> GetAllByUser(int idUser);
         Application GetById(int idApplication);
-        Application CreateApplication(Application app);
+        Application Create(Application app);
         void UpdateApplication(Application app);
         void Delete(int Id);
     }

@@ -16,7 +16,7 @@ namespace AppLog.Services
         {
             this._repository = new ApplicationRepository(new AppDomainContext.LogContext());
         }
-        public Application CreateApplication(Application app)
+        public Application Create(Application app)
         {
             return this._repository.Create(app);
         }

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using AppDomainContext;
 using AppLog.Helpers;
 using AppLog.Services;
+using AppLog.Services.Interfaces;
 
 namespace WebApi
 {
