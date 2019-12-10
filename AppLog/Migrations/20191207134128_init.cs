@@ -51,7 +51,7 @@ namespace AppLog.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Enviroments",
+                name: "Environments",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -96,14 +96,14 @@ namespace AppLog.Migrations
                     table.ForeignKey(
                         name: "FK_Logs_Enviroments_EnviromentId",
                         column: x => x.EnviromentId,
-                        principalTable: "Enviroments",
+                        principalTable: "Environments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Enviroments_ApplicationId",
-                table: "Enviroments",
+                table: "Environments",
                 column: "ApplicationId");
 
             migrationBuilder.CreateIndex(
@@ -129,7 +129,7 @@ namespace AppLog.Migrations
                 name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "Enviroments");
+                name: "Environments");
 
             migrationBuilder.DropTable(
                 name: "Applications");

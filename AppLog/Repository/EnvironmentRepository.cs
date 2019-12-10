@@ -12,29 +12,33 @@ namespace AppLog.Repository
         public EnvironmentRepository(LogContext context) : base(context) { }
         public async Task<IEnumerable<Domain.Models.Environment>> ListAsync()
         {
-            return await _context.Enviroments
+            return await _context.Environments
                                  .AsNoTracking()
                                  .ToListAsync();
         }
         public async Task AddAsync(Domain.Models.Environment environment)
         {
-            await _context.Enviroments.AddAsync(environment);
+            await _context.Environments.AddAsync(environment);
         }
         public Domain.Models.Environment Create(Domain.Models.Environment env)
         {
-            this._context.Enviroments.Add(env);
+            this._context.Environments.Add(env);
             this._context.SaveChanges();
             return env;
         }
 
         public async Task<Domain.Models.Environment> FindByIdAsync(int id)
         {
-            return await _context.Enviroments.FindAsync(id);
+            return await _context.Environments.FindAsync(id);
         }
 
         public Domain.Models.Environment FindById(int id)
         {
-            return this._context.Enviroments.Where(x => x.Id == id).FirstOrDefault();
+            return this._context.Environments.Where(x => x.Id == id).FirstOrDefault();
+        }
+        public IList<Domain.Models.Environment> FindByAppId(int appId)
+        {
+            return this._context.Environments.Where(x => x.ApplicationId == appId).ToList();
         }
 
         public void Update(Domain.Models.Environment env)
@@ -44,13 +48,13 @@ namespace AppLog.Repository
             environment.Name = env.Name;
             environment.Url = env.Url;
             environment.Ip = env.Ip;
-            this._context.Enviroments.Update(environment);
+            this._context.Environments.Update(environment);
             this._context.SaveChanges();
         }
 
         public void Remove(Domain.Models.Environment environment)
         {
-            _context.Enviroments.Remove(environment);
+            _context.Environments.Remove(environment);
         }
     }
 }

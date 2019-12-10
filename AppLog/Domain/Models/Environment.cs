@@ -1,4 +1,5 @@
-﻿using AppLog.Services.Interfaces;
+﻿using AppLog.Dto;
+using AppLog.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -34,7 +35,20 @@ namespace AppLog.Domain.Models
             {
                 validation.Add(new Validation("Url", "O campo Url é Obrigatório"));
             }
+            if (this.ApplicationId == -1)
+            { 
+                validation.Add(new Validation("Url", "É necessário ter um ApplicationId Vinculado"));
+            }
             return validation;
+        }
+        public EnvironmentDto ConvertToDTO()
+        {
+            EnvironmentDto envDto = new EnvironmentDto();
+            envDto.Id = this.Id;
+            envDto.Ip = this.Ip;
+            envDto.Url = this.Url;
+            envDto.Name = this.Name;
+            return envDto;
         }
     }
 }

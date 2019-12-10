@@ -67,7 +67,7 @@ namespace AppLog.Migrations
 
                     b.HasIndex("ApplicationId");
 
-                    b.ToTable("Enviroments");
+                    b.ToTable("Environments");
                 });
 
             modelBuilder.Entity("AppLog.Domain.Models.Log", b =>
@@ -115,7 +115,7 @@ namespace AppLog.Migrations
             modelBuilder.Entity("AppLog.Domain.Models.Enviroment", b =>
                 {
                     b.HasOne("AppLog.Domain.Models.Application", "Application")
-                        .WithMany("Enviroments")
+                        .WithMany("Environments")
                         .HasForeignKey("ApplicationId");
                 });
 
