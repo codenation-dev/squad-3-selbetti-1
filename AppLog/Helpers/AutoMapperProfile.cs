@@ -9,14 +9,14 @@ namespace AppLog.Helpers
     {
         public AutoMapperProfile()
         {
+            CreateMap<Log, LogDto>();
+            CreateMap<LogDto, Log>();
             CreateMap<User, UserDto>();
             CreateMap<UserDto, User>();
             CreateMap<Application, ApplicationDto>();
             CreateMap<ApplicationDto, Application>();
             CreateMap<EnvironmentDto, Domain.Models.Environment> ();
             CreateMap<Domain.Models.Environment, EnvironmentDto>();
-            CreateMap<IList <EnvironmentDto>, IList <Domain.Models.Environment>>();
-            CreateMap<IList <Domain.Models.Environment>, IList <EnvironmentDto>>();
         }
     }
 }
