@@ -9,6 +9,7 @@ using AppLog.Domain.Models;
 using AppLog.Dto;
 using AppLog.Helpers;
 using AppLog.Services;
+using AppLog.Services.Interfaces;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -75,11 +76,16 @@ namespace AppLog.Controllers
         public IActionResult Register([FromBody] UserDto userDto)
         {
             var user = _mapper.Map<User>(userDto);
+            var listOfValidation = user.ValidateObj();
+            if(listOfValidation.Count != 0)
+            {
+                return BadRequest(listOfValidation);
+            }
 
             try
             {                
                 _userService.Create(user, userDto.Password);
-                return Ok();
+                return Created("", "Usuário Criado com Sucesso!");
             }
             catch (AppException ex)
             {
@@ -101,15 +107,19 @@ namespace AppLog.Controllers
             var user = _userService.GetById(id);
             var userDto = _mapper.Map<UserDto>(user);
             return Ok(userDto);
-            return null;
         }
 
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody]UserDto userDto)
         {
-            return null;
+            
             // map dto to entity and set id
             var user = _mapper.Map<User>(userDto);
+            var listOfValidation = user.ValidateObj();
+            if (listOfValidation.Count != 0)
+            {
+                return BadRequest(listOfValidation);
+            }
             user.Id = id;
 
             try

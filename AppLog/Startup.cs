@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using AppDomainContext;
 using AppLog.Helpers;
 using AppLog.Services;
+using AppLog.Services.Interfaces;
 
 namespace WebApi
 {
@@ -73,6 +74,8 @@ namespace WebApi
 
             // configure DI for application services
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IApplicationService, ApplicationService>();
+            services.AddScoped<IEnvironmentService, EnvironmentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AppLog",
+    "\\AppLog\\Dto",
+    "\\AppLog\\Migrations"
   ],
+  "SelectedNode": "\\AppLog",
   "PreviewInSolutionExplorer": false
 }
