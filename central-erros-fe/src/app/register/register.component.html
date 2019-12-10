@@ -1,0 +1,30 @@
+<div class="container">
+
+	<h3 class="text-center my-5">Cadastre-se</h3>
+
+	<mat-form-field>
+		<input matInput placeholder="Nome" [(ngModel)]="model.name" name="name" required>
+	</mat-form-field>
+
+	<mat-form-field>
+		<input matInput placeholder="E-mail" [(ngModel)]="model.mail" name="mail" required>
+	</mat-form-field>
+
+	<mat-form-field>
+		<input matInput placeholder="Senha" [type]="'password'" [(ngModel)]="model.password" name="password" required>
+	</mat-form-field>
+
+	<mat-form-field>
+        <input matInput placeholder="Nome da aplicação" [(ngModel)]="model.nameApp" name="nameApp">
+	</mat-form-field>
+
+	<mat-form-field>
+        <input matInput placeholder="IP" [(ngModel)]="model.ip" name="ip">
+	</mat-form-field>
+
+	<mat-form-field>
+        <input matInput placeholder="URL" [(ngModel)]="model.url" name="url">
+	</mat-form-field>
+
+	<button mat-raised-button color="primary" routerLink="/login" (click)="save()">Cadastrar</button>
+</div>

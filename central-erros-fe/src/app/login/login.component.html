@@ -1,0 +1,16 @@
+<div class="container">
+
+    <h3 class="text-center my-5">Login</h3>
+  
+    <mat-form-field>
+      <input matInput placeholder="E-mail" [(ngModel)]="model.mail" name="mail" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput placeholder="Senha" [type]="'password'" [(ngModel)]="model.password" name="password" required>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" (click)="doLogin()" [disabled]="model.password.length == 0 || model.mail.length == 0">Entrar</button>
+    <br>
+    <button mat-raised-button color="primary" routerLink="/register">Cadastre-se</button>
+</div>
