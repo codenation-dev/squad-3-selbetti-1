@@ -10,6 +10,8 @@ namespace AppLog.Helpers
         {
             CreateMap<User, UserDto>();
             CreateMap<UserDto, User>();
+            CreateMap<Application, ApplicationDto>();
+            CreateMap<ApplicationDto, Application>();
         }
     }
 }

@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\AppLog",
+    "\\AppLog\\Dto",
     "\\AppLog\\Migrations"
   ],
-  "SelectedNode": "\\AppLog\\Migrations\\LogContextModelSnapshot.cs",
+  "SelectedNode": "\\AppLog\\Dto\\UserDto.cs",
   "PreviewInSolutionExplorer": false
 }

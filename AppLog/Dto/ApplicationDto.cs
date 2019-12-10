@@ -11,7 +11,7 @@ namespace AppLog.Dto
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public User User { get; set; }
+        // public User User { get; set; }
 
         public Application ConvertToApplication()
         {
@@ -32,14 +32,14 @@ namespace AppLog.Dto
             {
                 app.Description = "";
             }
-            if (this.GetType().GetProperty("User") != null)
+            /*if (this.GetType().GetProperty("User") != null)
             {
                 app.User = this.User;
             }
             else
             {
                 app.User = null;
-            }
+            }*/
             return app;
         }
     }

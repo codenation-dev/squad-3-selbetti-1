@@ -11,10 +11,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AppLog.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
-    public class ApplicationController : ControllerBase
+    public class ApplicationController : Controller
     {
         private IApplicationService _applicationService;
         private IMapper _mapper;
