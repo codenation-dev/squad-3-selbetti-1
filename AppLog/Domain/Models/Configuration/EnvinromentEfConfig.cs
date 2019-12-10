@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AppLog.Domain.Models.Configuration
 {
-    public class EnvinromentEfConfig : IEntityTypeConfiguration<Envinroment>
+    public class EnvinromentEfConfig : IEntityTypeConfiguration<Environment>
     {
-        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Envinroment> builder)
+        public void Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder<Environment> builder)
         {
             builder.ToTable("Environments");
             builder.HasKey(s => s.Id);

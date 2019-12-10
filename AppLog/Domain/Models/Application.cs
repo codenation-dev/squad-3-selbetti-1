@@ -11,7 +11,7 @@ namespace AppLog.Domain.Models
         public string Name { get; set; }
         public string Description { get; set; }
         // public User User { get; set; }
-        public virtual ICollection<Envinroment> Envinroments { get; set; }
+        public virtual ICollection<Environment> Envinroments { get; set; }
         public IList<Validation> ValidateObj()
         {
             IList<Validation> validation = new List<Validation>();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppLog.Domain.Models
 {
-    public class Envinroment
+    public class Environment
     {
         public int Id { get; set; }
         public string Ip { get; set; }

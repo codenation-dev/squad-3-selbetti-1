@@ -9,7 +9,7 @@ namespace AppDomainContext
         public DbSet<Category> Categories { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<Envinroment> Enviroments { get; set; }
+        public DbSet<Environment> Enviroments { get; set; }
         public DbSet<Application> Applications  { get; set; }
         public DbSet<ApplicationCategory> ApplicationCategories { get; set; }
 
