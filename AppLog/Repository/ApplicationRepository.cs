@@ -54,5 +54,6 @@ namespace AppLog.Repository
         {
             _context.Applications.Remove(application);
         }
+        //TODO MAIS IMPORTANTE LINK ENTRE USER E APP E A CONSULTA COM USERID
     }
 }

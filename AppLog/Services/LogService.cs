@@ -20,6 +20,7 @@ namespace AppLog.Services
             return this._repository.FindById(idLog);
         }
 
+        //TODO
         public IList<Log> GetLogsByApplicationId(int appId)
         {
             throw new NotImplementedException();

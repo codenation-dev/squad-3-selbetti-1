@@ -39,6 +39,11 @@ namespace AppLog.Repository
         {
             return this._context.Logs.Where(x => x.Id == id).FirstOrDefault();
         }
+        //TODO
+        public Log FindByEnvId(int id)
+        {
+            return null;
+        }
 
         public void Update(Log logUpdate)
         {

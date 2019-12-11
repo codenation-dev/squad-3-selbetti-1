@@ -41,5 +41,6 @@ namespace AppLog.Services
         {
             this._repository.Update(app);
         }
+        //TODO GET APPLICATIONS BY USERID
     }
 }
