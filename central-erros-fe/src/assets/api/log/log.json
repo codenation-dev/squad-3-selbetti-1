@@ -1,20 +1,18 @@
 [
     {
-        "id":"1",
-        "description":"descrição do erro",
-        "origin":"origem",
-        "level":"error",
-        "environment":"desenvolvimento",
-        "date":"05/12/2019",
-        "isArquived":"false"
+        "Id":"1",
+        "Description":"descrição do erro",
+        "Origin":"origem",
+        "Category":"error",
+        "Environment":"desenvolvimento",
+        "Date":"05/12/2019"
     },
     {
-        "id":"2",
-        "description":"descrição do erro2",
-        "origin":"origem2",
-        "level":"error2",
-        "environment":"desenvolvimento2",
-        "date":"05/12/2019",
-        "isArquived":"false"
+        "Id":"2",
+        "Description":"descrição do erro2",
+        "Origin":"origem2",
+        "Category":"error2",
+        "Environment":"desenvolvimento2",
+        "Date":"05/12/2019"
     }
 ]

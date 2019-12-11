@@ -15,16 +15,18 @@
 	</mat-form-field>
 
 	<mat-form-field>
-        <input matInput placeholder="Nome da aplicação" [(ngModel)]="model.nameApp" name="nameApp">
+        <input matInput placeholder="Nome da aplicação" [(ngModel)]="model.nameApp" name="nameApp" required>
 	</mat-form-field>
 
 	<mat-form-field>
-        <input matInput placeholder="IP" [(ngModel)]="model.ip" name="ip">
+        <input matInput placeholder="IP" [(ngModel)]="model.ip" name="ip" required>
 	</mat-form-field>
 
 	<mat-form-field>
         <input matInput placeholder="URL" [(ngModel)]="model.url" name="url">
 	</mat-form-field>
 
-	<button mat-raised-button color="primary" routerLink="/login" (click)="save()">Cadastrar</button>
+	<button mat-raised-button color="primary" routerLink="/login" (click)="save()" 
+	[disabled]="model.password.length == 0 || model.mail.length == 0 || model.name.length == 0
+	|| model.nameApp.length == 0 || model.ip.length == 0" >Cadastrar</button>
 </div>

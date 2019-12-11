@@ -31,32 +31,9 @@ export class MainComponent implements OnInit  {
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
-  displayedColumns: string[] = ['level', 'log', 'date', 'arq', 'det'];
+  displayedColumns: string[] = ['level', 'environment', 'log', 'date', 'arq', 'det'];
   dataSource = new MatTableDataSource<Log>(this.logData);
- // selection = new SelectionModel<Log>(true, []);
-
-  /** Whether the number of selected elements matches the total number of rows. */
- /* isAllSelected() {
-    const numSelected = this.selection.selected.length;
-    const numRows = this.dataSource.data.length;
-    return numSelected === numRows;
-  }*/
-
-  /** Selects all rows if they are not all selected; otherwise clear selection. */
- /* masterToggle() {
-    this.isAllSelected() ?
-        this.selection.clear() :
-        this.dataSource.data.forEach(row => this.selection.select(row));
-  }*/
-
-  /** The label for the checkbox on the passed row */
- /* checkboxLabel(row?: Log): string {
-    if (!row) {
-      return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
-    }
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
-  }
-*/
+ 
   getLogs(){
     this.logService.get(this.filter).then((result) => {
       if(result){ 
@@ -68,14 +45,6 @@ export class MainComponent implements OnInit  {
 
   getById(log: Log){
     this.router.navigateByUrl('/description', { state: { log } });
-  }
-
-  delete(item){
-    this.logService.deleteById(item).then((result) => {
-      if(result){ 
-        console.log('Excluído com sucesso!!');        
-      }
-    },(reject) => { console.log(reject) });
   }
 
   arquive(logId){

@@ -1,27 +1,28 @@
 <mat-toolbar>
 	<div class="w-100 text-left">
-		<h5>Seja Bem Vindo Usuário! Seu token é: ADS5D-4S5D-4A5D4S-5D4A5S4D5-A4D54AD-5D4SA</h5>
+		<h1>Seja Bem Vindo {{userData.name}}!</h1>
+		<h5>Seu token é: {{userData.token}}</h5>
 	</div>
 </mat-toolbar>
 
 <div class="mt-5 mx-5">
 	<mat-list>
-		<h2>Erro no 127.0.0 em {{log.log.date}}</h2>
+		<h2>Erro no 127.0.0 em {{log.log.Date}}</h2>
 		<mat-list-item>
 			<h4 class="font-weight-bold" mat-line>Nível</h4>
-			<p mat-line> {{ log.log.level }}</p>
+			<p mat-line> {{ log.log.Category }}</p>
 		</mat-list-item>
 		<mat-list-item>
 			<h4 class="font-weight-bold" mat-line>Ambiente</h4>
-			<p mat-line> {{ log.log.environment }}</p>
+			<p mat-line> {{ log.log.Environment }}</p>
 		</mat-list-item>
 		<mat-list-item>
 			<h4 class="font-weight-bold" mat-line>Título</h4>
-			<p mat-line> {{ log.log.description }}</p>
+			<p mat-line> {{ log.log.Description }}</p>
 		</mat-list-item>
 		<mat-list-item>
-			<h4 class="font-weight-bold" mat-line>Coletado por:</h4>
-			<p mat-line>Fernanda</p>
+			<h4 class="font-weight-bold" mat-line>Solução</h4>
+			<p mat-line>{{ log.log.Solution }}</p>
 		</mat-list-item> 
 		<button mat-raised-button color="primary"  routerLink="/main">Voltar</button>
 	</mat-list>

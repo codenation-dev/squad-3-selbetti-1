@@ -23,17 +23,14 @@ export class RegisterComponent {
 
   save() {
     var register ={
-      //'id' : this.model.id,
       'Name' : this.model.name,
       'Email' : this.model.mail,
-      'Password' : this.model.password/*,
-      'nameApp' : this.model.nameApp,
-      'ip' : this.model.ip,
-      'url' : this.model.url*/
+      'Password' : this.model.password,
+      'NameApp' : this.model.nameApp,
+      'Ip' : this.model.ip,
+      'Url' : this.model.url
     }
     
     this.registerService.save(register);
-    //alterar?
-
   }
 }

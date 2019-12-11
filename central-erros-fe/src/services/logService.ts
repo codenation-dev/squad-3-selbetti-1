@@ -3,10 +3,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Log } from 'src/models/log';
 
 const httpOptions = {
-    headers: new HttpHeaders({'Content-Type': 'application/json'})
+    headers: new HttpHeaders({'Content-Type': 'application/json'}) //, 'Authorization':'Bearer ${tokenParse}'})
 };
 
 const url = 'http://localhost:4200/assets/api/log/log.json';
+const url1 = 'https://localhost:44385/api/log';
 
 @Injectable()
 export class LogService {
@@ -26,12 +27,12 @@ export class LogService {
       let promise = this.http.get<Log>(url, logId);
       return promise.toPromise();
     }
-
+/*
     deleteById(logId) {
       let promise = this.http.delete<Log>(url, logId);
       return promise.toPromise();
     }
-
+*/
     arquive(log){
       let promise = this.http.put<Log>(url, log);
       return promise.toPromise();
