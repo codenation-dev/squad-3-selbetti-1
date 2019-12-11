@@ -17,7 +17,7 @@ namespace AppDomainContext
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // CONNECTION USANDO LOCALSQLTRADICIONAL
-            // optionsBuilder.UseSqlServer(@"Server=localhost\sqlexpress;Database=Log;Trusted_Connection=True");
+            optionsBuilder.UseSqlServer(@"Server=localhost\sqlexpress;Database=Log;Trusted_Connection=True");
             // CONNECTION USANDO DOCKER
             optionsBuilder.UseSqlServer("Data Source = localhost, 11433; Initial Catalog = Log; User Id = SA; Password = DockerSql2017!;");
         }
@@ -27,8 +27,7 @@ namespace AppDomainContext
             builder.ApplyConfiguration(new EnvinromentEfConfig());
             builder.ApplyConfiguration(new ApplicationEfConfig());
             builder.ApplyConfiguration(new ApplicationCategoryEfConfig());
-            base.OnModelCreating(builder);      
-
+            base.OnModelCreating(builder); 
         }
     }
 }

@@ -15,6 +15,8 @@ namespace AppLog.Domain.Models
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
 
+        public virtual Application Application {get; set;}
+
         public IList<Validation> ValidateObj()
         {
             IList<Validation> validation = new List<Validation>();

@@ -7,11 +7,13 @@ namespace AppLog.Domain.Models
 {
     public class Application
     {
-        public int Id { get; set; } 
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        // public User User { get; set; } // TODO
-        public virtual ICollection<Environment> Envinroments { get; set; }
+        
+        public int UserId {get ; set;}
+        public User User { get; set; } 
+        public virtual ICollection<Environment> Environments { get; set; }
         public IList<Validation> ValidateObj()
         {
             IList<Validation> validation = new List<Validation>();

@@ -27,9 +27,9 @@ namespace AppLog.Services
             this._repository.Remove(app);
         }
 
-        public IEnumerable<Application> GetAllByUser(int idUser)
+        public Application GetByUserId(int userId)
         {
-            throw new NotImplementedException();
+            return _repository.GetByUserId(userId);
         }
 
         public Application GetById(int idApplication)
@@ -37,10 +37,9 @@ namespace AppLog.Services
             return this._repository.FindById(idApplication);
         }
 
-        public void UpdateApplication(Application app)
+        public void Update(Application app)
         {
             this._repository.Update(app);
         }
-        //TODO GET APPLICATIONS BY USERID
     }
 }
