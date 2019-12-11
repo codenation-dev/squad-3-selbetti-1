@@ -54,6 +54,10 @@ namespace AppLog.Repository
         {
             _context.Applications.Remove(application);
         }
-        //TODO MAIS IMPORTANTE LINK ENTRE USER E APP E A CONSULTA COM USERID
+
+        public Application GetByUserId(int userId)
+        {
+            return _context.Applications.FirstOrDefault(x => x.UserId == userId);
+        }
     }
 }

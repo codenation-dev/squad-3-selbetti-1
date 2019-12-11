@@ -12,7 +12,7 @@ namespace AppLog.Domain.Models.Configuration
         {
             builder.ToTable("Environments");
             builder.HasKey(s => s.Id);
-            builder.HasOne(x => x.Application).WithMany(x => x.Envinroments);
+            builder.HasOne(x => x.Application).WithMany(x => x.Environments);
         }
     }
 }

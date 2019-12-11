@@ -1,7 +1,6 @@
 ﻿using AppLog.Domain.Models;
 using AppLog.Dto;
 using AutoMapper;
-using System.Collections.Generic;
 
 namespace AppLog.Helpers
 {

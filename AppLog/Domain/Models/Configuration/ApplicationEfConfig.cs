@@ -12,7 +12,8 @@ namespace AppLog.Domain.Models.Configuration
         {
             builder.ToTable("Applications");
             builder.HasKey(s => s.Id);
-            builder.HasMany(x => x.Envinroments).WithOne(x => x.Application);
+            builder.HasMany(x => x.Environments).WithOne(x => x.Application);
+            builder.HasOne(x => x.User).WithOne(x => x.Application);
         }
     }
 }

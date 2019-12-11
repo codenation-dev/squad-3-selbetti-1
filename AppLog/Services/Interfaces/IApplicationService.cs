@@ -8,10 +8,10 @@ namespace AppLog.Services.Interfaces
 {
     public interface IApplicationService
     {
-        IEnumerable<Application> GetAllByUser(int idUser);
+        Application GetByUserId(int userId);
         Application GetById(int idApplication);
         Application Create(Application app);
-        void UpdateApplication(Application app);
+        void Update(Application app);
         void Delete(int Id);
     }
 }
