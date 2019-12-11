@@ -42,11 +42,7 @@ namespace AppLog.Repository
 
         public void Update(Application app)
         {
-
-            var application = FindById(app.Id);
-            application.Name = app.Name;
-            application.Description = app.Description;
-            _context.Applications.Update(application);
+            _context.Applications.Update(app);
             _context.SaveChanges();
         }
 

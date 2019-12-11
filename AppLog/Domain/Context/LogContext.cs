@@ -19,7 +19,7 @@ namespace AppDomainContext
             // CONNECTION USANDO LOCALSQLTRADICIONAL
             optionsBuilder.UseSqlServer(@"Server=localhost\sqlexpress;Database=Log;Trusted_Connection=True");
             // CONNECTION USANDO DOCKER
-            optionsBuilder.UseSqlServer("Data Source = localhost, 11433; Initial Catalog = Log; User Id = SA; Password = DockerSql2017!;");
+            // optionsBuilder.UseSqlServer("Data Source = localhost, 11433; Initial Catalog = Log; User Id = SA; Password = DockerSql2017!;");
         }
 
         protected override void OnModelCreating(ModelBuilder builder)

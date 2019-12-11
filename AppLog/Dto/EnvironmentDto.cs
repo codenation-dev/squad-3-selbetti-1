@@ -49,14 +49,7 @@ namespace AppLog.Dto
             }
             if (this.GetType().GetProperty("ApplicationId") != null)
             {
-                if (Convert.ToInt32(this.ApplicationId) != 0)
-                {
-                    env.ApplicationId = Convert.ToInt32(this.ApplicationId);
-                }
-                else
-                {
-                    env.ApplicationId = -1;
-                }
+                env.ApplicationId = this.ApplicationId;
             }
             else
             {

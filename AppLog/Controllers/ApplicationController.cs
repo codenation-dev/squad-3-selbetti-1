@@ -33,7 +33,7 @@ namespace AppLog.Controllers
             var appDto = _mapper.Map<ApplicationDto>(app);
             return Ok(appDto);
         }
-    
+
         [HttpPost("Register")]
         public IActionResult Register([FromBody] ApplicationDto appDto)
         {
@@ -48,6 +48,28 @@ namespace AppLog.Controllers
             {
                 this._applicationService.Create(app);
                 return Created("", "Application Criada com Sucesso!");
+            }
+            catch (Exception ex)
+            {
+                // return error message if there was an exception
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update([FromBody] ApplicationDto appDto)
+        {
+            var app = _mapper.Map<Application>(appDto);
+            var listOfValidation = app.ValidateObj();
+            if (listOfValidation.Count != 0)
+            {
+                return BadRequest(listOfValidation);
+            }
+
+            try
+            {
+                this._applicationService.Update(app);
+                return Update(_mapper.Map<ApplicationDto>(app));
             }
             catch (Exception ex)
             {
