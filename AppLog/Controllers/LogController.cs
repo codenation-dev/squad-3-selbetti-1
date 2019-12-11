@@ -64,7 +64,6 @@ namespace AppLog.Controllers
             {
                 return BadRequest(listOfValidation);
             }
-
             try
             {
                 this._logService.Update(log);

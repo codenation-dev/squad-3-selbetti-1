@@ -9,22 +9,22 @@ namespace AppLog.Dto
     public class LogDto
     {
         public int Id { get; set; }
-        public Category Category { get; set; }
-        public string Description { get; set; }
-        public string Solution { get; set; }
         public DateTime Date { get; set; }
-        public Domain.Models.Environment Environment { get; set; }
+        public String Category { get; set; }
+        public string Solution { get; set; }
+        public int EnvironmentId { get; set; }
+        public string Description { get; set; }
 
         public Log ConvertToLog()
         {
             Log log = new Log();
             if (this.GetType().GetProperty("Category") != null)
             {
-                log.Category = null; //TODO
+                log.Category = this.Category; //TODO
             }
             else
             {
-                log.Category = null;//TODO
+                log.Category = "";//TODO
             }
             if (this.GetType().GetProperty("Description") != null)
             {
@@ -35,11 +35,11 @@ namespace AppLog.Dto
             }
             if (this.GetType().GetProperty("Environment") != null)
             {
-                log.Environment = null;//TODO
+                log.EnvironmentId = this.EnvironmentId;//TODO
             }
             else
             {
-                log.Environment = null;//TODO
+                log.EnvironmentId = 0;//TODO
             }
             if (this.GetType().GetProperty("Solution") != null)
             {

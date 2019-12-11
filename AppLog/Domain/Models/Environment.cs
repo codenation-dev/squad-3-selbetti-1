@@ -15,6 +15,7 @@ namespace AppLog.Domain.Models
         public string Name { get; set; }
         public string Url { get; set; }
         public int ApplicationId { get; set; }
+        public virtual IList<Log> logs { get; set; }
 
         [ForeignKey("ApplicationId")]
         public virtual Application Application { get; set; }

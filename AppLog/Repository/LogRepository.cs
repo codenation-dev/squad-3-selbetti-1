@@ -52,7 +52,7 @@ namespace AppLog.Repository
             log.Category= logUpdate.Category;
             log.Solution = logUpdate.Solution;
             log.Description = logUpdate.Description;
-            log.Environment = logUpdate.Environment;
+            log.EnvironmentId = logUpdate.EnvironmentId;
             _context.Logs.Update(log);
             _context.SaveChanges();
         }

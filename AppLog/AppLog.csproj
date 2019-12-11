@@ -6,6 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Domain\Models\Category.cs" />
+    <Compile Remove="Dto\CategoryDto.cs" />
+    <Compile Remove="Repository\CategoryRepository.cs" />
+    <Compile Remove="Services\CategoryService.cs" />
+    <Compile Remove="Services\Interfaces\ICategoryService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
